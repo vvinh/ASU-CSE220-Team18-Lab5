@@ -1,4 +1,4 @@
 ASU-CSE220-Team18-Lab5
 ======================
 
-Lab 5 (Nicholas, Timothy and Vivian)
+This repository is for Lab 5 (Nicholas, Timothy and Vivian)
