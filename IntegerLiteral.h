@@ -9,7 +9,6 @@
 
 #ifndef IntegerLiteral_H
 #define IntegerLiteral_H
-
 #include "Literal.h" // Literal class definition#include <sstream>
 class IntegerLiteral: public Literal {
 public:

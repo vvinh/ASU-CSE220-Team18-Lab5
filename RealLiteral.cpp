@@ -9,7 +9,6 @@
 
 #include <iostream>
 #include "RealLiteral.h" // RealLiteral class definitionusing namespace std;
-
 // constructor 
 RealLiteral::RealLiteral(const double pDouble) :
 		Literal() {

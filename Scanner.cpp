@@ -13,6 +13,7 @@
 #include "IntegerLiteral.h"
 #include "RealLiteral.h"
 #include "StringLiteral.h"
+#include "Identifier.h"
 
 typedef struct
 {
@@ -85,12 +86,12 @@ bool Scanner::getSourceLine(char source_buffer[])
         return false;
     }
 }
-Token* Scanner::getToken()
+Identifier* Scanner::getToken()
 {
     char ch = '\0'; //This can be the current character you are examining during scanning.
     char token_string[MAX_TOKEN_STRING_LENGTH] = {'\0'}; //Store your token here as you build it.
     char *token_ptr = token_string; //write some code to point this to the beginning of token_string
-    Token *new_token = new Token();
+    Identifier *new_token = new Identifier();
     
     new_token->setType(NULL);
     //1.  Skip past all of the blanks
@@ -181,7 +182,7 @@ void Scanner::skipComment(char source_buffer[])
     }
     while ((ch != '}') && (ch != EOF_CHAR));
 }
-void Scanner::getWord(char *str, char *token_ptr, Token *tok)
+void Scanner::getWord(char *str, char *token_ptr, Identifier *tok)
 {
     /*
      Write some code to Extract the word
@@ -208,7 +209,7 @@ void Scanner::getWord(char *str, char *token_ptr, Token *tok)
     }
     tok->setTokenString(string(str));
 }
-void Scanner::getNumber(char *str, char *token_ptr, Token *tok)
+void Scanner::getNumber(char *str, char *token_ptr, Identifier *tok)
 {
     /*
      Write some code to Extract the number and convert it to a literal number.
@@ -278,7 +279,7 @@ void Scanner::getNumber(char *str, char *token_ptr, Token *tok)
         tok->setLiteral((float)atof(str));
     }
 }
-void Scanner::getString(char *str, char *token_ptr, Token *tok)
+void Scanner::getString(char *str, char *token_ptr, Identifier *tok)
 {
     /*
      Write some code to Extract the string
@@ -301,7 +302,7 @@ void Scanner::getString(char *str, char *token_ptr, Token *tok)
 
     tok->setType(aStringLiteralPtr);
 }
-void Scanner::getSpecial(char *str, char *token_ptr, Token *tok)
+void Scanner::getSpecial(char *str, char *token_ptr, Identifier *tok)
 {
     /*
      Write some code to Extract the special token.  Most are single-character
@@ -460,7 +461,7 @@ void Scanner::downshiftWord(char word[])
         word[index] = tolower(word[index]);
     }
 }
-bool Scanner::isReservedWord(char *str, Token *tok)
+bool Scanner::isReservedWord(char *str, Identifier *tok)
 {
     /*
      Examine the reserved word table and determine if the function input is a reserved word.

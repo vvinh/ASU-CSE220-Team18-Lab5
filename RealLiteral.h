@@ -10,8 +10,7 @@
 #ifndef RealLiteral_H
 #define RealLiteral_H
 
-#include "Literal.h" // Literal class definition#include <sstream>
-class RealLiteral: public Literal {
+#include "Literal.h" // Literal class definition#include <sstream>class RealLiteral: public Literal {
 public:
 
 	RealLiteral(const double pDouble);

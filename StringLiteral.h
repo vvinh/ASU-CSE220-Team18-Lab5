@@ -10,8 +10,7 @@
 #ifndef StringLiteral_H
 #define StringLiteral_H
 
-#include "Literal.h" // Literal class definition
-class StringLiteral: public Literal {
+#include "Literal.h" // Literal class definitionclass StringLiteral: public Literal {
 public:
 
 	StringLiteral(const string pType);
