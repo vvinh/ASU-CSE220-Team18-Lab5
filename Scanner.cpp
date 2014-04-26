@@ -90,7 +90,7 @@ Identifier* Scanner::getToken()
 {
     char ch = '\0'; //This can be the current character you are examining during scanning.
     char token_string[MAX_TOKEN_STRING_LENGTH] = {'\0'}; //Store your token here as you build it.
-    char *token_ptr = token_string; //write some code to point this to the beginning of token_string
+    char *token_ptr = token_string; //Points to the beginning of token_string
     Identifier *new_token = new Identifier();
     
     new_token->setType(NULL);
