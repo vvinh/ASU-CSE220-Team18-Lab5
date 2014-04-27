@@ -55,7 +55,7 @@ bool IdentifierBinaryTree::addIdentifier(Identifier *tok, int lineNum) {
 		Identifier *parentNode = getTreeRoot();
 		string treeNodeName;
 		int stringComparison;
-
+		// while there is something in parentNode
 		while (parentNode != NULL) {
 			treeNodeName = parentNode->getTokenString();
 			stringComparison = tokenName.compare(treeNodeName);
